@@ -1,10 +1,14 @@
-local lsp_zero = require('lsp-zero')
+require('mason').setup({
+  log_level = vim.log.levels.DEBUG,
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗"
+    }
+  }
+})
 
-lsp_zero.on_attach(function(client, bufnr)
-  lsp_zero.default_keymaps({buffer = bufnr})
-end)
-
-require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
     'tsserver',
@@ -26,9 +30,6 @@ require('mason-lspconfig').setup({
     'tailwindcss',
     'yamlls',
     'vimls'
-  },
-  handlers = {
-    lsp_zero.default_setup,
   },
 })
 
