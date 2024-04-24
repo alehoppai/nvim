@@ -34,6 +34,7 @@ require('mason-lspconfig').setup({
     'taplo',
     'tailwindcss',
     'yamlls',
+    'vimls'
   },
   handlers = {
     lsp_zero.default_setup,

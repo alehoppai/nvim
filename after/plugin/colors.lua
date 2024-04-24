@@ -1,25 +1,4 @@
--- require('rose-pine').setup({
---   disable_background = true,
---   disable_float_background = true,
--- })
--- 
--- function ApplyTheme(schemeId)
---   scheme = schemeId or "rose-pine"
---   vim.cmd.colorscheme(scheme)
--- 
---   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
---   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
---   vim.api.nvim_create_autocmd("ColorScheme", {
---     pattern = "*",
---     callback = function()
---       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
---     end,
---   })
--- end
--- 
--- ApplyTheme()
 
--- Default options:
 require("gruvbox").setup({
   terminal_colors = true, -- add neovim terminal colors
   undercurl = true,
@@ -42,7 +21,7 @@ require("gruvbox").setup({
   palette_overrides = {},
   overrides = {},
   dim_inactive = false,
-  transparent_mode = false,
+  transparent_mode = true,
 })
 vim.cmd("colorscheme gruvbox")
 
