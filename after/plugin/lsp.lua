@@ -1,12 +1,11 @@
+local lsp_zero = require('lsp-zero')
+
+lsp_zero.on_attach(function(client, bufnr)
+  lsp_zero.default_keymaps({buffer = bufnr})
+end)
+
 require('mason').setup({
   log_level = vim.log.levels.DEBUG,
-  ui = {
-    icons = {
-      package_installed = "✓",
-      package_pending = "➜",
-      package_uninstalled = "✗"
-    }
-  }
 })
 
 require('mason-lspconfig').setup({
@@ -31,5 +30,8 @@ require('mason-lspconfig').setup({
     'yamlls',
     'vimls'
   },
+  handlers = {
+    lsp_zero.default_setup,
+  }
 })
 

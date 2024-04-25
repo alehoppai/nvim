@@ -1,4 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -9,17 +10,37 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath) require("lazy").setup({
   {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.4',
-	  requires = { {'nvim-lua/plenary.nvim'} }
-  },
-  {
     'nvim-treesitter/nvim-treesitter',
-    cmd = { 'TSUpdate' },
+    build = ':TSUpdate',
   },
-  'tpope/vim-fugitive',
-  'nvim-tree/nvim-web-devicons',
+
+  {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v3.x',
+    dependencies = {
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+      'neovim/nvim-lspconfig',
+      'hrsh7th/nvim-cmp',
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip',
+    },
+  },
+
+  {
+	  'nvim-telescope/telescope.nvim',
+    tag = '0.1.4',
+	  dependencies = {
+      'nvim-lua/plenary.nvim'
+    },
+  },
+
+
+   { 'tpope/vim-fugitive' },
+
   {
     'folke/trouble.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -36,12 +57,16 @@ vim.opt.rtp:prepend(lazypath) require("lazy").setup({
       auto_close = true,
     },
   },
+
   {
     'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
   },
-  'ellisonleao/gruvbox.nvim',
-  'sbdchd/neoformat',
+
+  { 'ellisonleao/gruvbox.nvim' },
+
+  { 'sbdchd/neoformat' },
+
   {
     'nvimdev/dashboard-nvim',
     event = 'VimEnter',
@@ -50,9 +75,6 @@ vim.opt.rtp:prepend(lazypath) require("lazy").setup({
         -- config
       }
     end,
-    dependencies = { {'nvim-tree/nvim-web-devicons'}}
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
-  "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
-  "neovim/nvim-lspconfig",
 })
