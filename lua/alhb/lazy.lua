@@ -41,22 +41,21 @@ vim.opt.rtp:prepend(lazypath) require("lazy").setup({
 
    { 'tpope/vim-fugitive' },
 
-  {
-    'folke/trouble.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    opts = {
-      position = "bottom",
-      height = 10,
-      width = 50,
-      icons = true,
-      mode = "workspace_diagnostics",
-      group = true,
-      padding = true,
-      multiline = true,
-      auto_open = true,
-      auto_close = true,
-    },
-  },
+  -- {
+  --   'folke/trouble.nvim',
+  --   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  --   opts = {
+  --     position = "bottom",
+  --     height = 10,
+  --     width = 50,
+  --     icons = true,
+  --     mode = "workspace_diagnostics",
+  --     group = true,
+  --     padding = true,
+  --     multiline = true, auto_open = true,
+  --     auto_close = true,
+  --   },
+  -- },
 
   {
     'nvim-lualine/lualine.nvim',
@@ -77,4 +76,37 @@ vim.opt.rtp:prepend(lazypath) require("lazy").setup({
     end,
     dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
+
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  { 'DaikyXendo/nvim-material-icon' },
+  -- {
+  --   "folke/which-key.nvim",
+  --   event = "VeryLazy",
+  --   init = function()
+  --     vim.o.timeout = true
+  --     vim.o.timeoutlen = 300
+  --   end,
+  --   opts = {
+  --     -- your configuration comes here
+  --     -- or leave it empty to use the default settings
+  --     -- refer to the configuration section below
+  --   }
+  -- }
+  -- lazy.nvim
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+      }
+  },
+  { 'nvim-tree/nvim-web-devicons' }
 })

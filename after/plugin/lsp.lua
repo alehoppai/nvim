@@ -16,6 +16,7 @@ require('mason-lspconfig').setup({
     'angularls',
     'astro',
     'cssls',
+    'clangd',
     'dockerls',
     'graphql',
     'html',
@@ -25,10 +26,12 @@ require('mason-lspconfig').setup({
     'purescriptls',
     'sqlls',
     'svelte',
+    'swift_mesonls',
     'taplo',
     'tailwindcss',
     'yamlls',
-    'vimls'
+    'vimls',
+    'zls'
   },
   handlers = {
     lsp_zero.default_setup,
