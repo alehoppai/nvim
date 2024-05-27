@@ -63,6 +63,11 @@ vim.opt.rtp:prepend(lazypath) require("lazy").setup({
   },
 
   { 'ellisonleao/gruvbox.nvim' },
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+  },
 
   { 'sbdchd/neoformat' },
 
