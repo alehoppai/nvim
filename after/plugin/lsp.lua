@@ -19,6 +19,7 @@ require('mason-lspconfig').setup({
     'clangd',
     'dockerls',
     'golangci_lint_ls',
+    'gopls',
     'graphql',
     'html',
     'biome',
