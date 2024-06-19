@@ -62,13 +62,6 @@ vim.opt.rtp:prepend(lazypath) require("lazy").setup({
     dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
   },
 
-  { 'ellisonleao/gruvbox.nvim' },
-  {
-    "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-
   { 'sbdchd/neoformat' },
 
   {
@@ -84,6 +77,7 @@ vim.opt.rtp:prepend(lazypath) require("lazy").setup({
 
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   { 'DaikyXendo/nvim-material-icon' },
+  { 'rktjmp/lush.nvim' },
   -- {
   --   "folke/which-key.nvim",
   --   event = "VeryLazy",
@@ -113,5 +107,19 @@ vim.opt.rtp:prepend(lazypath) require("lazy").setup({
       "rcarriga/nvim-notify",
       }
   },
-  { 'nvim-tree/nvim-web-devicons' }
+  { 'nvim-tree/nvim-web-devicons' },
+
+  -- Color themes
+  { 'ellisonleao/gruvbox.nvim' },
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    'olivercederborg/poimandres.nvim',
+    lazy = false,
+    priority = 1000,
+  },
+  { 'rockerBOO/boo-colorscheme-nvim' },
 })

@@ -60,3 +60,4 @@ require('lualine').setup {
   tabline = {},
   extensions = {},
 }
+
